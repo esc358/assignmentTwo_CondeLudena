@@ -11,16 +11,17 @@ https://dribbble.com/shots/16933473-Digio-Login-Screen-->
     android:id="@+id/loginLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <!-- App Logo and Image -->
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/imgAndLoginLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -30,14 +31,19 @@ https://dribbble.com/shots/16933473-Digio-Login-Screen-->
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:padding="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_launcher_foreground"/>
 
         <TextView
-            android:id="@+id/textTitle"
+            android:id="@+id/textLogintTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="20dp"
             android:text="Login"
+            android:textAlignment="center"
+            android:textColor="#FDFDFD"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -46,43 +52,60 @@ https://dribbble.com/shots/16933473-Digio-Login-Screen-->
     <!-- Email Input -->
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="409dp"
-        android:layout_height="456dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#DC0B0B"
         android:orientation="vertical"
         android:padding="12dp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="2dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAndLoginLinearLayout"
+        app:layout_constraintVertical_bias="0.26">
 
         <EditText
             android:id="@+id/inputEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:background="@drawable/rounded_edittext"
-            android:drawableStart="@android:drawable/ic_dialog_email"
-            android:hint="Email"
+            android:hint="Email Address"
             android:inputType="textEmailAddress"
-            android:padding="12dp"
-            android:shadowColor="#673AB7" />
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:drawableStart="@android:drawable/ic_lock_idle_lock"
+            android:background="@drawable/rounded_edittext"
             android:hint="Password"
             android:inputType="textPassword"
-            android:padding="12dp" />
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white" />
 
+        <!--TODO: Letter size and type-->
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:backgroundTint="#7EB351"
             android:text="Login" />
+
+        <!--TODO: button-->
+        <TextView
+            android:id="@+id/textRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Register" />
 
     </LinearLayout>
 
@@ -91,26 +114,5 @@ https://dribbble.com/shots/16933473-Digio-Login-Screen-->
     <!-- Login Button -->
 
     <!-- Register / Forgot Links -->
-    <LinearLayout
-        android:id="@+id/layoutLinks"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="Register" />
-
-        <TextView
-            android:id="@+id/textForgotPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="Forgot Password?" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

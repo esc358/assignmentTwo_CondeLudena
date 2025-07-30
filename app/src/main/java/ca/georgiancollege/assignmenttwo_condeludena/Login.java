@@ -8,18 +8,18 @@ package ca.georgiancollege.assignmenttwo_condeludena;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import ca.georgiancollege.assignmenttwo_condeludena.databinding.ActivityMainBinding;
+import ca.georgiancollege.assignmenttwo_condeludena.databinding.LoginBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     //initialize binding for activity_main.xml
-    ActivityMainBinding activityMainBinding;
+    LoginBinding loginBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //assign binding to layout
-        activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(activityMainBinding.getRoot());
+        loginBinding = LoginBinding.inflate(getLayoutInflater());
+        setContentView(loginBinding.getRoot());
     }
 }
