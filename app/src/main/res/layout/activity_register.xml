@@ -1,10 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Emilio Sebastian Conde Ludena
+200478144
+July 31, 2025
+3:50am-->
+<!--Inspirations from:
+https://dribbble.com/shots/18442291-Neap-Mental-Health-Mobile-App-UI-UX-Design-for-Diabetics-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/loginLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Register">
 
+    <!-- App Logo and Image and Text -->
+    <LinearLayout
+        android:id="@+id/imgAndLoginLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/_20dp"
+        android:paddingBottom="@dimen/_20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageLogo"
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_100dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/_10dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/textSignUpTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_100dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:fontFamily="@font/arimo"
+            android:text="@string/sign_up"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_28sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Email Input, Password Input, Login and Sign Up Buttons -->
+    <LinearLayout
+        android:id="@+id/formLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_30dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:orientation="vertical"
+        android:padding="@dimen/_12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAndLoginLinearLayout"
+        app:layout_constraintVertical_bias="0.26">
+
+        <EditText
+            android:id="@+id/inputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/_20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:fontFamily="@font/arimo"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="@dimen/_20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:fontFamily="@font/arimo"
+            tools:ignore="Autofill" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_20dp">
+
+            <Button
+                android:id="@+id/buttonSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/_5175b3"
+                android:text="@string/sign_up"
+                android:textSize="@dimen/_20sp"
+                android:padding="@dimen/_12dp"
+                tools:ignore="ButtonStyle"
+                android:fontFamily="@font/arimo"/>
+
+            <Button
+                android:id="@+id/buttonReturnLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:text="@string/i_already_have_an_account"
+                android:textSize="@dimen/_20sp"
+                android:layout_marginEnd="@dimen/_10dp"
+                tools:ignore="ButtonStyle"
+                android:padding="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:fontFamily="@font/arimo"/>
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

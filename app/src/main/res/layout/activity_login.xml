@@ -97,7 +97,7 @@ https://dribbble.com/shots/16933473-Digio-Login-Screen-->
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_marginTop="@dimen/_20dp">
 
             <Button
@@ -113,15 +113,17 @@ https://dribbble.com/shots/16933473-Digio-Login-Screen-->
                 android:fontFamily="@font/arimo"/>
 
             <Button
-                android:id="@+id/buttonSignUp"
+                android:id="@+id/buttonGoSignUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10dp"
-                android:backgroundTint="@color/_5175b3"
-                android:text="@string/sign_up"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:text="@string/register_for_an_account"
                 android:textSize="@dimen/_20sp"
-                android:padding="@dimen/_12dp"
+                android:layout_marginEnd="@dimen/_10dp"
                 tools:ignore="ButtonStyle"
+                android:padding="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_10dp"
                 android:fontFamily="@font/arimo"/>
         </LinearLayout>
     </LinearLayout>
