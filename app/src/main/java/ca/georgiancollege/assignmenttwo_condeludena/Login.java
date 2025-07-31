@@ -52,7 +52,39 @@ public class Login extends AppCompatActivity {
         activityLoginBinding.buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //get from edit text email and password and save it in str variables
+                String email = activityLoginBinding.inputEmail.getText().toString().trim();
+                String password = activityLoginBinding.inputPassword.getText().toString().trim();
+
+                //clear errors
+                activityLoginBinding.textError.setVisibility(View.GONE);
+
+                //email not valid
+                if (!isValidEmail(email)) {
+                    //display error
+                    activityLoginBinding.textError.setText("Invalid email address");
+                    //set view visible for error
+                    activityLoginBinding.textError.setVisibility(View.VISIBLE);
+                    //end void function
+                    return;
+                }
+
+                //password not valid
+                if (!isValidPassword(password)) {
+                    activityLoginBinding.textError.setText("Password must be at least 6 characters and include a number");
+                    activityLoginBinding.textError.setVisibility(View.VISIBLE);
+                    return;
+                }
+
+                //sign in user
+                signUser(email, password);
+
                 //TODO: reuse views from movies recycler view
+
+                //intialize new intent for movie activity
+                Intent intentMovieActivity = new Intent(getApplicationContext(), MovieActivity.class);
+                startActivity(intentMovieActivity);
+                finish();
             }
         });
     }
@@ -66,6 +98,19 @@ public class Login extends AppCompatActivity {
 
             }
         });
+    }
+    //email validation using regex
+    private boolean isValidEmail(String email) {
+        //set regex for email
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        //return a boolean in string matches regex
+        return email.matches(emailRegex);
+    }
 
+    //password validation using regex
+    private boolean isValidPassword(String password) {
+        // At least 6 characters, at least 1 letter and 1 number
+        String passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d).{6,}$";
+        return password.matches(passwordRegex);
     }
 }
