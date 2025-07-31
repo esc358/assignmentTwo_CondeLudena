@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
         activityLoginBinding.buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: Create new empty view activity, reuse views from movies recycler view
+                //TODO: reuse views from movies recycler view
             }
         });
     }
