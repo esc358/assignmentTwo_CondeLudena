@@ -81,10 +81,7 @@ public class Login extends AppCompatActivity {
 
                 //TODO: reuse views from movies recycler view
 
-                //intialize new intent for movie activity
-                Intent intentMovieActivity = new Intent(getApplicationContext(), MovieActivity.class);
-                startActivity(intentMovieActivity);
-                finish();
+
             }
         });
     }
@@ -95,7 +92,21 @@ public class Login extends AppCompatActivity {
         firebaseAuthentication.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-
+                if (task.isSuccessful())
+                {
+                    //intialize new intent for movie activity
+                    Intent intentMovieActivity = new Intent(getApplicationContext(), MovieActivity.class);
+                    startActivity(intentMovieActivity);
+                    finish();
+                }
+                else{
+                    //show firebase error
+                    String errorMsg = task.getException() != null
+                            ? task.getException().getMessage()
+                            : "Log In failed. Try again.";
+                    activityLoginBinding.textError.setText(errorMsg);
+                    activityLoginBinding.textError.setVisibility(View.VISIBLE);
+                }
             }
         });
     }
