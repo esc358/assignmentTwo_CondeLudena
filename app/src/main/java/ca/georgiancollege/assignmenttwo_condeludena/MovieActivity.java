@@ -26,7 +26,7 @@ public class MovieActivity extends AppCompatActivity {
         setContentView(activityMovieBinding.getRoot());
         //instantiate firebase
         db = FirebaseFirestore.getInstance();
-        //TODO: reuse views from movies recycler view
+        //TODO: Logic for creating into database
 
     }
 }
