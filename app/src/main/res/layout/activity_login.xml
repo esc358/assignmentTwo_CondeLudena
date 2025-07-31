@@ -92,6 +92,18 @@ https://dribbble.com/shots/16933473-Digio-Login-Screen-->
             android:fontFamily="@font/arimo"
             tools:ignore="Autofill" />
 
+        <!-- Error message -->
+        <TextView
+            android:id="@+id/textError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arimo"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/_10dp"
+            android:textColor="@color/ff0000"
+            android:textSize="@dimen/_20sp"
+            android:visibility="gone"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"
