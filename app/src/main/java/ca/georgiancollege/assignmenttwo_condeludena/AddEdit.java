@@ -9,19 +9,14 @@ package ca.georgiancollege.assignmenttwo_condeludena;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.MutableLiveData;
-
-import java.util.List;
 
 import ca.georgiancollege.assignmenttwo_condeludena.databinding.ActivityAddEditBinding;
 
 public class AddEdit extends AppCompatActivity {
     //initialize binding for activity_main.xml
     ActivityAddEditBinding activityAddEditBinding;
-    //instantiate MutableLiveDate for a List of MovieModel, String
-    private final MutableLiveData<List<MovieModel>> searchMovieData = new MutableLiveData<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
