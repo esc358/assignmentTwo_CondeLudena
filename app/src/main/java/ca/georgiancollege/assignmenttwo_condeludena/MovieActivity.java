@@ -16,16 +16,14 @@ import ca.georgiancollege.assignmenttwo_condeludena.databinding.ActivityMovieBin
 public class MovieActivity extends AppCompatActivity {
     //initialize binding
     ActivityMovieBinding activityMovieBinding;
-    //initialize database
-    FirebaseFirestore db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //assign binding to layout
         activityMovieBinding = ActivityMovieBinding.inflate(getLayoutInflater());
         setContentView(activityMovieBinding.getRoot());
-        //instantiate firebase
-        db = FirebaseFirestore.getInstance();
+
         //TODO: Logic for creating into database
 
         //onclick for add button
