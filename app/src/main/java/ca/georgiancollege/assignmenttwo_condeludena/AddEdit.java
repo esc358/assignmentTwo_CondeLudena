@@ -11,11 +11,17 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.MutableLiveData;
+
+import java.util.List;
+
 import ca.georgiancollege.assignmenttwo_condeludena.databinding.ActivityAddEditBinding;
 
 public class AddEdit extends AppCompatActivity {
     //initialize binding for activity_main.xml
     ActivityAddEditBinding activityAddEditBinding;
+    //instantiate MutableLiveDate for a List of MovieModel, String
+    private final MutableLiveData<List<MovieModel>> searchMovieData = new MutableLiveData<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,13 @@ public class AddEdit extends AppCompatActivity {
         activityAddEditBinding.addEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //get information from input
+                String movieTitle = activityAddEditBinding.editTitle.getText().toString();
+                String movieYear = activityAddEditBinding.editYear.getText().toString();
+                String movieRating = activityAddEditBinding.editRating.getText().toString();
+                String movieImageLink = activityAddEditBinding.editImageLink.getText().toString();
+
+
                 //initialize new intent to Movie Activity
                 Intent intentMovieActivity = new Intent(getApplicationContext(), MovieActivity.class);
                 startActivity(intentMovieActivity);

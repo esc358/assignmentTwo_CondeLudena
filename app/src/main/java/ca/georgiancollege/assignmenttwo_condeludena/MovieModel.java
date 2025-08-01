@@ -12,6 +12,13 @@ public class MovieModel {
     private String year;
     private String poster;
 
+    public MovieModel(String title, String ratingValue, String year, String poster) {
+        this.title = title;
+        this.ratingValue = ratingValue;
+        this.year = year;
+        this.poster = poster;
+    }
+
     public String getTitle() {
         return title;
     }
