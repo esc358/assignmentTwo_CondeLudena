@@ -10,12 +10,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.firebase.firestore.FirebaseFirestore;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import ca.georgiancollege.assignmenttwo_condeludena.databinding.ActivityMovieBinding;
 
 public class MovieActivity extends AppCompatActivity {
-    //initialize binding
+    //initialize binding MovieAdapter, MovieViewModel
     ActivityMovieBinding activityMovieBinding;
+    private MovieAdapter movieAdapter;
+    private MovieViewModel movieViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,20 @@ public class MovieActivity extends AppCompatActivity {
         activityMovieBinding = ActivityMovieBinding.inflate(getLayoutInflater());
         setContentView(activityMovieBinding.getRoot());
 
-        //TODO: Logic for creating into database
+        //setup RecyclerView with Adapter
+        movieAdapter = new MovieAdapter();
+        activityMovieBinding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        activityMovieBinding.recyclerView.setAdapter(movieAdapter);
+
+        //setup ViewModel
+        movieViewModel = new ViewModelProvider(this).get(MovieViewModel.class);
+
+        //observe LiveData and update RecyclerView automatically
+        movieViewModel.getMovies().observe(this, movies -> {
+            if (movies != null) {
+                movieAdapter.submitList(movies);
+            }
+        });
 
         //onclick for add button
         activityMovieBinding.addButton.setOnClickListener(new View.OnClickListener() {

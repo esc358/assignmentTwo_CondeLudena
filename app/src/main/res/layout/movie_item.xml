@@ -25,6 +25,7 @@ Reused from assignment One https://github.com/esc358/assignmentOne_CondeLudena--
             android:id="@+id/gridLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:columnCount="2"
             android:padding="@dimen/_12dp"
             android:rowCount="5">
@@ -35,10 +36,11 @@ Reused from assignment One https://github.com/esc358/assignmentOne_CondeLudena--
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="0"
-                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
                 android:contentDescription="@string/movie_thumbnail"
-                tools:srcCompat="@tools:sample/avatars"
-                android:paddingBottom="10dp"/>
+                android:paddingBottom="10dp"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:layout_row="1"
@@ -96,20 +98,20 @@ Reused from assignment One https://github.com/esc358/assignmentOne_CondeLudena--
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="horizontal"
                 android:layout_row="4"
-                android:layout_columnSpan="2">
+                android:layout_columnSpan="2"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/editButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_8dp"
+                    android:layout_marginEnd="@dimen/_20dp"
                     android:backgroundTint="#425483"
                     android:fontFamily="@font/arimo"
                     android:padding="@dimen/_8dp"
-                    android:layout_marginEnd="@dimen/_20dp"
                     android:text="@string/edit"
                     android:textSize="@dimen/_23sp"
                     tools:ignore="ButtonStyle" />

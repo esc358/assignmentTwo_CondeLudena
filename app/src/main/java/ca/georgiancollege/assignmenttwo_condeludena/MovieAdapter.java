@@ -57,7 +57,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
                     // on failure
                     .error(      R.drawable.no_poster)
                     .fit()
-                    .centerCrop()
+                    .centerInside()
                     .into(holder.movieItemBinding.imageView);
         } else {
             // no valid url show no poster
