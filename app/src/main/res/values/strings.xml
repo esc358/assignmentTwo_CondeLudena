@@ -18,4 +18,10 @@
     <string name="add_movie">Add Movie</string>
     <string name="add">Add</string>
     <string name="back_to_list">Back To List</string>
+    <string name="image_link">Image Link:</string>
+    <string name="empty">" "</string>
+    <string name="enter_year">Enter Year</string>
+    <string name="enter_image_link">Enter Image Link</string>
+    <string name="enter_title">Enter Title</string>
+    <string name="enter_rating">Enter Rating</string>
 </resources>

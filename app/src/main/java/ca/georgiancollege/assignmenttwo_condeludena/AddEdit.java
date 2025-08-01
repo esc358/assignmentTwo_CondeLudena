@@ -6,7 +6,10 @@
  * */
 package ca.georgiancollege.assignmenttwo_condeludena;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import ca.georgiancollege.assignmenttwo_condeludena.databinding.ActivityAddEditBinding;
 
@@ -29,6 +32,25 @@ public class AddEdit extends AppCompatActivity {
 
 
         //TODO: Logic for Add Edit
+        //onclick for addEdit button
+        activityAddEditBinding.addEditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //initialize new intent to Movie Activity
+                Intent intentMovieActivity = new Intent(getApplicationContext(), MovieActivity.class);
+                startActivity(intentMovieActivity);
+            }
+        });
+
+        //onclick for back button
+        activityAddEditBinding.backMoviesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //initialize new intent to Movie Activity
+                Intent intentMovieActivity = new Intent(getApplicationContext(), MovieActivity.class);
+                startActivity(intentMovieActivity);
+            }
+        });
 
 
 

@@ -10,13 +10,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import ca.georgiancollege.assignmenttwo_condeludena.databinding.ActivityLoginBinding;
@@ -39,13 +33,10 @@ public class Login extends AppCompatActivity {
         firebaseAuthentication = FirebaseAuth.getInstance();
 
         //onclick for register button
-        activityLoginBinding.buttonGoSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //initialize new intent to Register
-                Intent intentRegister = new Intent(getApplicationContext(), Register.class);
-                startActivity(intentRegister);
-            }
+        activityLoginBinding.buttonGoSignUp.setOnClickListener(v -> {
+            //initialize new intent to Register
+            Intent intentRegister = new Intent(getApplicationContext(), Register.class);
+            startActivity(intentRegister);
         });
 
         //onclick for login button
@@ -85,24 +76,21 @@ public class Login extends AppCompatActivity {
     //void method to sign user
     private void signUser(String email, String password){
         //method from firebase to sign in with email and password
-        firebaseAuthentication.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful())
-                {
-                    //intialize new intent for movie activity
-                    Intent intentMovieActivity = new Intent(getApplicationContext(), MovieActivity.class);
-                    startActivity(intentMovieActivity);
-                    finish();
-                }
-                else{
-                    //show firebase error
-                    String errorMsg = task.getException() != null
-                            ? task.getException().getMessage()
-                            : "Log In failed. Try again.";
-                    activityLoginBinding.textError.setText(errorMsg);
-                    activityLoginBinding.textError.setVisibility(View.VISIBLE);
-                }
+        firebaseAuthentication.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
+            if (task.isSuccessful())
+            {
+                //intialize new intent for movie activity
+                Intent intentMovieActivity = new Intent(getApplicationContext(), MovieActivity.class);
+                startActivity(intentMovieActivity);
+                finish();
+            }
+            else{
+                //show firebase error
+                String errorMsg = task.getException() != null
+                        ? task.getException().getMessage()
+                        : "Log In failed. Try again.";
+                activityLoginBinding.textError.setText(errorMsg);
+                activityLoginBinding.textError.setVisibility(View.VISIBLE);
             }
         });
     }

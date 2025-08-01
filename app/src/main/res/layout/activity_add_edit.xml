@@ -10,7 +10,8 @@ Reused from assignment One https://github.com/esc358/assignmentOne_CondeLudena--
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MovieActivity">
+    tools:context=".MovieActivity"
+    android:background="@color/ebe1c6">
 
     <!-- App Logo and Image and Text -->
     <LinearLayout
@@ -69,52 +70,27 @@ Reused from assignment One https://github.com/esc358/assignmentOne_CondeLudena--
             android:paddingBottom="@dimen/_8dp">
 
             <TextView
-                android:id="@+id/studio"
+                android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arimo"
                 android:textSize="@dimen/_23sp"
-                tools:text="@string/title" />
+                android:text="@string/title"
+                android:textColor="@color/black"/>
 
             <EditText
                 android:id="@+id/editTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
                 android:fontFamily="@font/arimo"
-                android:inputType="text"
+                android:hint="@string/enter_title"
+                android:textColorHint="@color/white"
                 android:paddingStart="@dimen/_8dp"
                 android:paddingEnd="@dimen/_8dp"
                 android:textSize="@dimen/_23sp"
-                android:textStyle="bold|italic"
-                tools:ignore="Autofill,LabelFor,TextFields" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/studioMovieLinearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingBottom="@dimen/_8dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/arimo"
-                android:textSize="@dimen/_23sp"
-                tools:text="@string/rating" />
-
-            <EditText
-                android:id="@+id/editRating"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/arimo"
-                android:inputType="number"
-                android:paddingStart="@dimen/_8dp"
-                android:paddingEnd="@dimen/_8dp"
-                android:textSize="@dimen/_23sp"
-                android:textStyle="bold|italic"
-                tools:ignore="Autofill,LabelFor,TextFields" />
-
+                android:textColor="@color/black"
+                tools:ignore="Autofill,LabelFor,TextFields,VisualLintTextFieldSize" />
         </LinearLayout>
 
         <LinearLayout
@@ -129,19 +105,22 @@ Reused from assignment One https://github.com/esc358/assignmentOne_CondeLudena--
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arimo"
                 android:textSize="@dimen/_23sp"
-                tools:text="@string/year" />
+                android:text="@string/rating"
+                android:textColor="@color/black"/>
 
             <EditText
-                android:id="@+id/editYear"
+                android:id="@+id/editRating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arimo"
+                android:hint="@string/enter_rating"
                 android:inputType="text"
                 android:paddingStart="@dimen/_8dp"
                 android:paddingEnd="@dimen/_8dp"
                 android:textSize="@dimen/_23sp"
-                android:textStyle="bold|italic"
-                tools:ignore="Autofill,LabelFor,TextFields" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/white"
+                tools:ignore="Autofill,LabelFor,TextFields,VisualLintTextFieldSize" />
 
         </LinearLayout>
 
@@ -157,45 +136,78 @@ Reused from assignment One https://github.com/esc358/assignmentOne_CondeLudena--
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arimo"
                 android:textSize="@dimen/_23sp"
-                tools:text="Image Link: " />
+                android:text="@string/year"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/editYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arimo"
+                android:hint="@string/enter_year"
+                android:inputType="text"
+                android:paddingStart="@dimen/_8dp"
+                android:paddingEnd="@dimen/_8dp"
+                android:textSize="@dimen/_23sp"
+                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                tools:ignore="Autofill,LabelFor,TextFields,VisualLintTextFieldSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/imageMovieLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arimo"
+                android:textSize="@dimen/_23sp"
+                android:text="@string/image_link"
+                android:textColor="@color/black"/>
 
             <EditText
                 android:id="@+id/editImageLink"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arimo"
-                android:inputType="text"
+                android:inputType="textMultiLine"
+                android:hint="@string/enter_image_link"
                 android:paddingStart="@dimen/_8dp"
                 android:paddingEnd="@dimen/_8dp"
+                android:gravity="top|start"
                 android:textSize="@dimen/_23sp"
-                android:textStyle="bold|italic"
-                tools:ignore="Autofill,LabelFor,TextFields" />
+                android:textColorHint="@color/white"
+                tools:ignore="Autofill,LabelFor,TextFields,VisualLintTextFieldSize"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_row="4"
-            android:layout_columnSpan="2">
+            android:gravity="center|top"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/addEditButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8dp"
-                android:backgroundTint=""
+                android:layout_marginEnd="@dimen/_20dp"
+                android:backgroundTint="@color/black"
                 android:fontFamily="@font/arimo"
                 android:padding="@dimen/_8dp"
-                android:layout_marginEnd="@dimen/_20dp"
                 android:text="@string/add"
                 android:textSize="@dimen/_23sp"
                 tools:ignore="ButtonStyle" />
 
             <Button
-                android:id="@+id/deleteButton"
+                android:id="@+id/backMoviesButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8dp"
