@@ -21,5 +21,16 @@ public class AddEdit extends AppCompatActivity {
         activityAddEditBinding = ActivityAddEditBinding.inflate(getLayoutInflater());
         setContentView(activityAddEditBinding.getRoot());
 
+        //get the text from Intent
+        String titleText = getIntent().getStringExtra("titleText");
+        //assign text to intent
+        activityAddEditBinding.textMoviesListTitle.setText(titleText);
+        activityAddEditBinding.addEditButton.setText(titleText);
+
+
+        //TODO: Logic for Add Edit
+
+
+
     }
 }

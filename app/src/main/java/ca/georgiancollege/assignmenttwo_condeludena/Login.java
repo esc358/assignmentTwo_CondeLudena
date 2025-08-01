@@ -76,10 +76,8 @@ public class Login extends AppCompatActivity {
                     activityLoginBinding.textError.setVisibility(View.VISIBLE);
                     return;
                 }
-
                 //sign in user
                 signUser(email, password);
-
             }
         });
     }

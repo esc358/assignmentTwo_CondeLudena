@@ -2,13 +2,211 @@
 <!--Emilio Sebastian Conde Ludena
 200478144
 July 31, 2025
-7:00pm-->
+7:00pm
+Reused from assignment One https://github.com/esc358/assignmentOne_CondeLudena-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddEdit">
+    tools:context=".MovieActivity">
 
+    <!-- App Logo and Image and Text -->
+    <LinearLayout
+        android:id="@+id/imgAndMovieListLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/_20dp"
+        android:paddingBottom="@dimen/_20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageLogo"
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_100dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/_10dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/textMoviesListTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:fontFamily="@font/arimo"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_28sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAndMovieListLinearLayout"
+        app:layout_constraintVertical_bias="0.13999999">
+
+
+        <LinearLayout
+            android:id="@+id/titleMovieLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_8dp">
+
+            <TextView
+                android:id="@+id/studio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arimo"
+                android:textSize="@dimen/_23sp"
+                tools:text="@string/title" />
+
+            <EditText
+                android:id="@+id/editTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arimo"
+                android:inputType="text"
+                android:paddingStart="@dimen/_8dp"
+                android:paddingEnd="@dimen/_8dp"
+                android:textSize="@dimen/_23sp"
+                android:textStyle="bold|italic"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/studioMovieLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arimo"
+                android:textSize="@dimen/_23sp"
+                tools:text="@string/rating" />
+
+            <EditText
+                android:id="@+id/editRating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arimo"
+                android:inputType="number"
+                android:paddingStart="@dimen/_8dp"
+                android:paddingEnd="@dimen/_8dp"
+                android:textSize="@dimen/_23sp"
+                android:textStyle="bold|italic"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ratingMovieLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arimo"
+                android:textSize="@dimen/_23sp"
+                tools:text="@string/year" />
+
+            <EditText
+                android:id="@+id/editYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arimo"
+                android:inputType="text"
+                android:paddingStart="@dimen/_8dp"
+                android:paddingEnd="@dimen/_8dp"
+                android:textSize="@dimen/_23sp"
+                android:textStyle="bold|italic"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/yearMovieLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arimo"
+                android:textSize="@dimen/_23sp"
+                tools:text="Image Link: " />
+
+            <EditText
+                android:id="@+id/editImageLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arimo"
+                android:inputType="text"
+                android:paddingStart="@dimen/_8dp"
+                android:paddingEnd="@dimen/_8dp"
+                android:textSize="@dimen/_23sp"
+                android:textStyle="bold|italic"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_row="4"
+            android:layout_columnSpan="2">
+
+            <Button
+                android:id="@+id/addEditButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:backgroundTint=""
+                android:fontFamily="@font/arimo"
+                android:padding="@dimen/_8dp"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:text="@string/add"
+                android:textSize="@dimen/_23sp"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:backgroundTint="#4F40D0"
+                android:fontFamily="@font/arimo"
+                android:padding="@dimen/_8dp"
+                android:text="@string/back_to_list"
+                android:textSize="@dimen/_23sp"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
